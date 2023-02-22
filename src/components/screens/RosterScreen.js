@@ -72,7 +72,7 @@ const RosterScreen = () => {
           <tbody>
             {allShifts.map((shift) => (
               <tr key={shift.id}>
-                <td>DAY: {shift.day}</td>
+                <td>Day: {shift.day} </td>
                 <td>{shift.timeOfDay}</td>
                 <td>
                   {shift.engineer.firstName} {shift.engineer.lastName}
