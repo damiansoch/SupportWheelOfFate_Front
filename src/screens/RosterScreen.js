@@ -43,10 +43,10 @@ const RosterScreen = () => {
 
   return (
     <div className='text-center schedule-container' style={{ opacity: 0 }}>
-      <h1>Schedule</h1>
+      <h1 className='my-5 text-white'>Schedule</h1>
 
       <Button variant='success' className='mb-3' onClick={clickHandler}>
-        Create new roster
+        Create new schedule
       </Button>
       <br />
       {allShifts.length === 0 && (
