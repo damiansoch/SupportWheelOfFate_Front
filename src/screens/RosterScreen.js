@@ -1,12 +1,25 @@
 import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
+
 import { Button, Table } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
 
+import gsap from 'gsap';
+
 const RosterScreen = () => {
   const [allShifts, setAllShifts] = useState([]);
-  console.log(allShifts);
 
+  //animation
+  useEffect(() => {
+    gsap.to('.schedule-container', {
+      opacity: 100,
+      duration: 30,
+      delay: 0.1,
+      ease: 'power0',
+    });
+  }, [allShifts]);
+  //api
   useEffect(() => {
     axios.get('https://localhost:7018/api/Rota').then((res) => {
       setAllShifts(res.data);
@@ -29,7 +42,7 @@ const RosterScreen = () => {
   };
 
   return (
-    <div className='text-center'>
+    <div className='text-center schedule-container' style={{ opacity: 0 }}>
       <h1>Schedule</h1>
 
       <Button variant='success' className='mb-3' onClick={clickHandler}>
