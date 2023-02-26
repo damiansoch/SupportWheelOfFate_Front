@@ -14,7 +14,7 @@ const HomeScreen = () => {
     gsap.to('.circle', {
       scale: 1,
       duration: 1,
-      delay: 0.1,
+      delay: 0.4,
       ease: 'back',
       stagger: {
         each: 0.3,

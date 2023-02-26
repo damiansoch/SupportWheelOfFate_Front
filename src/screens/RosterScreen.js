@@ -34,11 +34,7 @@ const RosterScreen = () => {
   };
 
   const printClickHandler = () => {
-    var divToPrint = document.getElementById('printTable');
-    var newWin = window.open('');
-    newWin.document.write(divToPrint.outerHTML);
-    newWin.print();
-    newWin.close();
+    window.print();
   };
 
   return (
