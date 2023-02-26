@@ -14,7 +14,7 @@ const HomeScreen = () => {
     gsap.to('.circle', {
       scale: 1,
       duration: 1,
-      delay: 0.5,
+      delay: 0.1,
       ease: 'back',
       stagger: {
         each: 0.3,
@@ -38,7 +38,7 @@ const HomeScreen = () => {
             >
               <Card.Body className='d-flex align-items-center justify-content-center'>
                 <Card.Title>
-                  <h1 style={{ lineHeight: '2' }}>
+                  <h1 className='text-white' style={{ lineHeight: '2' }}>
                     All <br /> Engineers
                   </h1>
                 </Card.Title>
@@ -61,7 +61,7 @@ const HomeScreen = () => {
             >
               <Card.Body className='d-flex align-items-center justify-content-center'>
                 <Card.Title>
-                  <h1 style={{ lineHeight: '2' }}>
+                  <h1 className='text-white' style={{ lineHeight: '2' }}>
                     Create <br /> Roster
                   </h1>
                 </Card.Title>

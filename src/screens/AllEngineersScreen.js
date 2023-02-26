@@ -1,19 +1,33 @@
 import { useEffect, useState } from 'react';
+
 import axios from 'axios';
+
 import Table from 'react-bootstrap/Table';
 import Spinner from 'react-bootstrap/Spinner';
 
+import gsap from 'gsap';
+
 const AllEngineersScreen = () => {
   const [engineers, setEngineers] = useState([]);
+  //animations
 
+  useEffect(() => {
+    gsap.to('.table-container', {
+      opacity: 100,
+      duration: 30,
+      delay: 0.1,
+      ease: 'power0',
+    });
+  }, [engineers]);
+  //api
   useEffect(() => {
     axios.get('https://localhost:7018/api/Engineer/').then((res) => {
       setEngineers(res.data);
     });
   }, []);
   return (
-    <div className='text-center'>
-      <h1 className='mx-auto mb-5'>All engineers</h1>
+    <div className='text-center table-container' style={{ opacity: 0 }}>
+      <h1 className='mx-auto my-5 text-white'>All engineers</h1>
       {engineers.length === 0 && (
         <Spinner animation='grow' variant='success' className='mt-5' />
       )}
