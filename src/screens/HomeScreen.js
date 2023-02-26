@@ -23,12 +23,12 @@ const HomeScreen = () => {
   }, []);
   return (
     <div className='text-center mt-5'>
-      <Row style={{ minHeight: '80vh' }}>
+      <Row style={{ minHeight: '75vh' }}>
         <Col
           sm={12}
           md={6}
           lg={6}
-          className='d-flex align-items-center justify-content-center'
+          className='d-flex align-items-center justify-content-center my-3'
         >
           <Link to='/engineers'>
             <Card
@@ -51,7 +51,7 @@ const HomeScreen = () => {
           sm={12}
           md={6}
           lg={6}
-          className='d-flex align-items-center justify-content-center'
+          className='d-flex align-items-center justify-content-center my-3'
         >
           <Link to='/roster'>
             <Card

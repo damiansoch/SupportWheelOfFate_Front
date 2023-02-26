@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 import AllEngineersScreen from './screens/AllEngineersScreen';
 import HomeScreen from './screens/HomeScreen';
 import RosterScreen from './screens/RosterScreen';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path='/roster' element={<RosterScreen />} />
         </Routes>
       </Container>
+      <hr />
+      <Footer />
     </BrowserRouter>
   );
 }

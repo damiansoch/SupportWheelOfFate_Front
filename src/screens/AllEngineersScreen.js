@@ -26,7 +26,7 @@ const AllEngineersScreen = () => {
     });
   }, []);
   return (
-    <div className='text-center table-container' style={{ opacity: 0 }}>
+    <div className='text-center table-container my-5' style={{ opacity: 0 }}>
       <h1 className='mx-auto my-5 text-white'>All engineers</h1>
       {engineers.length === 0 && (
         <Spinner animation='grow' variant='success' className='mt-5' />

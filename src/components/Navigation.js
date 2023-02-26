@@ -24,9 +24,9 @@ const Navigation = () => {
     });
   }, []);
   return (
-    <Navbar bg='dark' variant='dark' className='mb-3' style={{ opacity: 0 }}>
-      <Container>
-        <Link to='/' style={{ textDecoration: 'none' }}>
+    <Navbar bg='dark' variant='dark' expand='lg'>
+      <Container fluid>
+        <Link to='/' style={{ textDecoration: 'none' }} className='ms-3'>
           <h1
             style={{
               fontFamily: 'El Messiri',
@@ -37,25 +37,28 @@ const Navigation = () => {
             S W o F
           </h1>
         </Link>
-        <Nav className='ms-auto'>
-          <Link to='/'>
-            <Button variant='dark' className='mx-2'>
-              <SiHomebridge className='me-1 my-auto' size={20} /> Home
-            </Button>
-          </Link>
-          <Link to='/engineers'>
-            <Button variant='dark' className='mx-2'>
-              <IoPeopleCircleSharp className='me-1 my-auto' size={20} /> All
-              Engineers
-            </Button>
-          </Link>
-          <Link to='/roster'>
-            <Button variant='dark' className='mx-2'>
-              <HiOutlineTableCells className='me-1 my-auto' size={20} />
-              Create Roster
-            </Button>
-          </Link>
-        </Nav>
+        <Navbar.Toggle aria-controls='navbarScroll' />
+        <Navbar.Collapse id='navbarScroll'>
+          <Nav className='ms-auto'>
+            <Link to='/'>
+              <Button variant='dark' className='mx-2'>
+                <SiHomebridge className='me-1 my-auto' size={20} /> Home
+              </Button>
+            </Link>
+            <Link to='/engineers'>
+              <Button variant='dark' className='mx-2'>
+                <IoPeopleCircleSharp className='me-1 my-auto' size={20} /> All
+                Engineers
+              </Button>
+            </Link>
+            <Link to='/roster'>
+              <Button variant='dark' className='mx-2'>
+                <HiOutlineTableCells className='me-1 my-auto' size={20} />
+                Create Roster
+              </Button>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
