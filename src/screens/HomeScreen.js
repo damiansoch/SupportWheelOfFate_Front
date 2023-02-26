@@ -3,8 +3,24 @@ import Card from 'react-bootstrap/Card';
 import { Row, Col } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import gsap from 'gsap';
 
 const HomeScreen = () => {
+  //animation
+
+  useEffect(() => {
+    gsap.to('.circle', {
+      scale: 1,
+      duration: 1,
+      delay: 0.5,
+      ease: 'back',
+      stagger: {
+        each: 0.3,
+      },
+    });
+  }, []);
   return (
     <div className='text-center mt-5'>
       <Row style={{ minHeight: '80vh' }}>
@@ -16,8 +32,8 @@ const HomeScreen = () => {
         >
           <Link to='/engineers'>
             <Card
-              style={{ width: '18rem', height: '18rem' }}
-              className='rounded-circle '
+              style={{ width: '18rem', height: '18rem', scale: 0 }}
+              className='rounded-circle circle'
               bg='success'
             >
               <Card.Body className='d-flex align-items-center justify-content-center'>
@@ -30,6 +46,7 @@ const HomeScreen = () => {
             </Card>
           </Link>
         </Col>
+
         <Col
           sm={12}
           md={6}
@@ -38,8 +55,8 @@ const HomeScreen = () => {
         >
           <Link to='/roster'>
             <Card
-              style={{ width: '18rem', height: '18rem' }}
-              className='rounded-circle '
+              style={{ width: '18rem', height: '18rem', scale: 0 }}
+              className='rounded-circle circle'
               bg='success'
             >
               <Card.Body className='d-flex align-items-center justify-content-center'>

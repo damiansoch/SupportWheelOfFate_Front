@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Table, Row, Col } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/Spinner';
 
 const RosterScreen = () => {
   const [allShifts, setAllShifts] = useState([]);
@@ -13,6 +14,7 @@ const RosterScreen = () => {
   }, []);
 
   const clickHandler = () => {
+    setAllShifts([]);
     axios.get('https://localhost:7018/api/Rota').then((res) => {
       setAllShifts(res.data);
     });
@@ -33,7 +35,10 @@ const RosterScreen = () => {
       <Button variant='success' className='mb-3' onClick={clickHandler}>
         Create new roster
       </Button>
-
+      <br />
+      {allShifts.length === 0 && (
+        <Spinner animation='grow' variant='success' className='mt-5' />
+      )}
       {allShifts.length > 0 && (
         <Table
           className='table-condensed'

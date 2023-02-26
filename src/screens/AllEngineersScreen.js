@@ -1,20 +1,24 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Table from "react-bootstrap/Table";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Table from 'react-bootstrap/Table';
+import Spinner from 'react-bootstrap/Spinner';
 
 const AllEngineersScreen = () => {
   const [engineers, setEngineers] = useState([]);
 
   useEffect(() => {
-    axios.get("https://localhost:7018/api/Engineer/").then((res) => {
+    axios.get('https://localhost:7018/api/Engineer/').then((res) => {
       setEngineers(res.data);
     });
-  }, [engineers]);
+  }, []);
   return (
-    <div className="text-center">
-      <h1 className="mx-auto mb-5">All engineers</h1>
+    <div className='text-center'>
+      <h1 className='mx-auto mb-5'>All engineers</h1>
+      {engineers.length === 0 && (
+        <Spinner animation='grow' variant='success' className='mt-5' />
+      )}
       {engineers.length > 0 && (
-        <Table striped bordered hover size="sm" variant="success">
+        <Table striped bordered hover size='sm' variant='success'>
           <thead>
             <tr>
               <th>#</th>
