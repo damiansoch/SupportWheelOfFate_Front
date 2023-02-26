@@ -24,7 +24,7 @@ const Navigation = () => {
     });
   }, []);
   return (
-    <Navbar bg='dark' variant='dark' expand='lg'>
+    <Navbar bg='dark' variant='dark' expand='lg' style={{ opacity: 0 }}>
       <Container fluid>
         <Link to='/' style={{ textDecoration: 'none' }} className='ms-3'>
           <h1
