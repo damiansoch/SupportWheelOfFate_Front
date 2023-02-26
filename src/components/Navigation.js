@@ -86,7 +86,7 @@ const Navigation = () => {
                 style={{ opacity: 0 }}
               >
                 <HiOutlineTableCells className='me-1 my-auto' size={20} />
-                Create Roster
+                New Schedule
               </Button>
             </Link>
           </Nav>

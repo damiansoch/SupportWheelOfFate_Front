@@ -62,7 +62,7 @@ const HomeScreen = () => {
               <Card.Body className='d-flex align-items-center justify-content-center'>
                 <Card.Title>
                   <h1 className='text-white' style={{ lineHeight: '2' }}>
-                    Create <br /> Roster
+                    New <br /> schedule
                   </h1>
                 </Card.Title>
               </Card.Body>
