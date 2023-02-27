@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import React, { useEffect, useState } from 'react';
 
-import { Button, Table } from 'react-bootstrap';
+import { Button, Table, Row, Col } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
 
 import gsap from 'gsap';
@@ -33,17 +33,49 @@ const RosterScreen = () => {
     });
   };
 
+  //sorting by engineer
+  const sortByEngineer = () => {
+    const allShiftsByEngineer = [...allShifts].sort((a, b) =>
+      a.engineer.lastName > b.engineer.lastName ? 1 : -1
+    );
+    setAllShifts(allShiftsByEngineer);
+  };
+  //sorting by day
+  const sortByDay = () => {
+    const allShiftsByDay = [...allShifts].sort((a, b) => a.day - b.day);
+    setAllShifts(allShiftsByDay);
+  };
+
   const printClickHandler = () => {
     window.print();
   };
 
   return (
     <div className='text-center schedule-container' style={{ opacity: 0 }}>
-      <h1 className='my-5 text-white'>Schedule</h1>
+      <h1 className='text-white my-5'>Schedule</h1>
+      <Row className='mb-3'>
+        <Col>
+          <Button size='sm' variant='outline-success' onClick={sortByDay}>
+            By day
+          </Button>
+        </Col>
+        <Col>
+          <Button
+            size='sm'
+            variant='success'
+            className='mb-3'
+            onClick={clickHandler}
+          >
+            Create new schedule
+          </Button>
+        </Col>
+        <Col>
+          <Button size='sm' variant='outline-success' onClick={sortByEngineer}>
+            By engineer
+          </Button>
+        </Col>
+      </Row>
 
-      <Button variant='success' className='mb-3' onClick={clickHandler}>
-        Create new schedule
-      </Button>
       <br />
       {allShifts.length === 0 && (
         <Spinner animation='grow' variant='success' className='mt-5' />
