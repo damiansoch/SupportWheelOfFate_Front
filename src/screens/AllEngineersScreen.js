@@ -35,17 +35,30 @@ const AllEngineersScreen = () => {
         <Table striped bordered hover size='sm' variant='success'>
           <thead>
             <tr>
-              <th>#</th>
-
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th
+                style={{
+                  color: 'white',
+                  fontWeight: 'bold',
+                  backgroundColor: 'grey',
+                }}
+              >
+                First Name
+              </th>
+              <th
+                style={{
+                  color: 'white',
+                  fontWeight: 'bold',
+                  backgroundColor: 'grey',
+                }}
+              >
+                Last Name
+              </th>
             </tr>
           </thead>
           <tbody>
             {engineers &&
               engineers.map((engineer, index) => (
                 <tr key={engineer.id}>
-                  <td>{index + 1}</td>
                   <td>{engineer.firstName}</td>
                   <td>{engineer.lastName}</td>
                 </tr>
